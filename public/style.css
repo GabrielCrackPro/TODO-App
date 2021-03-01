@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+*::placeholder {
+  color: #d62246;
+  font-weight: bold;
+}
+*::selection {
+  background: #d62246;
+  color: #fff;
+  font-weight: bold;
+}
+.menu {
+  padding: 10px;
+  background: #d62246;
+}
+.menu li {
+  display: inline-block;
+}
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 27px;
+}
+#about-link {
+  margin-left: 80vw;
+}
+#new-todo {
+  position: absolute;
+  background: #ccc;
+  margin-top: 10px;
+  width: 40vw;
+  margin-left: 10px;
+  border: 2px solid #d62246;
+}
+#new-todo h3 {
+  text-align: center;
+  color: #d62246;
+  font-weight: bold;
+}
+#new-todo input,
+#new-todo textarea,
+#new-todo button {
+  width: 30vw;
+  margin-left: 5vw;
+  margin-bottom: 5px;
+}
+#new-todo input,
+#new-todo textarea {
+  border: none;
+  border-bottom: 2px solid #d62246;
+  outline: none;
+  background: none;
+  text-align: center;
+}
+#new-todo button {
+  border: 1px solid #fff;
+  border-radius: 25px;
+  outline: none;
+  background: #d62246;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
+}
+/*TODO: Finish styling*/
+/*TODO: Add animations*/
