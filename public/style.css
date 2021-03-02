@@ -53,10 +53,15 @@
 #new-todo input,
 #new-todo textarea {
   border: none;
-  border-bottom: 2px solid #d62246;
   outline: none;
   background: none;
   text-align: center;
+  color: #d62246;
+}
+#new-todo input:focus,
+#new-todo textarea:focus {
+  border-bottom: 2px solid #d62246;
+  transition: all 0.3s ease;
 }
 #new-todo button {
   border: 1px solid #fff;
@@ -68,5 +73,66 @@
   padding: 5px;
   cursor: pointer;
 }
-/*TODO: Finish styling*/
-/*TODO: Add animations*/
+#new-todo button:hover,
+#todo-card button:hover {
+  background: #fff;
+  color: #d62246;
+  border: 2px solid #d62246;
+  transition: all 0.3s ease;
+}
+.todo-list {
+  position: relative;
+  left: 45vw;
+  margin-top: 5px;
+  width: 30vw;
+  background: #ccc;
+  color: #d62246;
+}
+#todo-card {
+  border-bottom: 2px solid #d62246;
+  margin-top: 5px;
+}
+#todo-card h3,
+#todo-card p {
+  text-align: center;
+}
+#todo-card h3 {
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-bottom: 2px;
+}
+.todo-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.todo-buttons button {
+  margin-left: 5px;
+  background: none;
+  outline: none;
+  padding: 5px;
+  border: 2px solid #d62246;
+  border-radius: 10px;
+  background: #d62246;
+  color: #fff;
+}
+.todo-buttons button i {
+  font-size: 25px;
+  font-weight: bold;
+}
+#done-button {
+  background: #30be09;
+  border: 2px solid #30be09;
+}
+/*TODO: Add functions to todo buttons*/
+/*TODO: Fix animations*/
+/*TODO: Add animations on create/delete todo*/
+@keyframes showTodoCard {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
