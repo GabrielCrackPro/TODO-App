@@ -11,4 +11,4 @@ A web TODO App
 
 - Add functions to todo buttons
 - Add animations on create/delete todo
-- Store tasks in array and localStorage
+- Integrate saveTodos function
