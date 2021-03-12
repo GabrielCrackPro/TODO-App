@@ -5,23 +5,29 @@ const doneButton = document.querySelector('#done-button')
 const deleteButton = document.querySelector('#delete-button')
 //Add new TODO
 
+class todo {
+    constructor(name, description) {
+        this.name = name
+        this.description = description
+        this.date = new Date().toLocaleDateString()
+    }
+}
+
 newTodoForm.addEventListener('submit', (event) => {
     const newTodoData = new FormData(newTodoForm)
 
     const todoName = newTodoData.get('todo-name')
     const todoDescription = newTodoData.get('todo-description')
 
-    const newTodo = {
-        todoName,
-        todoDescription
-    }
+    const newTodo = new todo(todoName, todoDescription, 'today')
     if (newTodo.todoName == '' || newTodo.todoDescription == '') {
         console.error('You must type something')
     } else {
         todoListElement.innerHTML += `
         <div id="todo-card">
-        <h3>${newTodo.todoName}</h3>
-        <p>${newTodo.todoDescription}</p>
+        <h3>${newTodo.name}</h3>
+        <p>${newTodo.description}</p>
+        <p>Added at: ${newTodo.date}</p>
         <div class="todo-buttons">
         <button id="done-button"><i class="fas fa-check"></i></button>
         <button id="delete-button"><i class="fas fa-times"></i></button>
@@ -29,7 +35,7 @@ newTodoForm.addEventListener('submit', (event) => {
         </div>
         `
         todoList.push(newTodo)
-        localStorage.setItem('TodoArray', JSON.stringify(todoList))
+        localStorage.setItem('TodoList', JSON.stringify(todoList))
     }
     newTodoForm.reset()
     event.preventDefault()
@@ -40,8 +46,8 @@ const getTodos = () => {
         const storedTodos = JSON.stringify(localStorage.getItem('TodoArray'))
         todoListElement.innerHTML += `
         <div id="todo-card">
-        <h3>${storedTodos[0].todoName}</h3>
-        <p>${storedTodos[0].todoDescription}</p>
+        <h3>${storedTodos[0].name}</h3>
+        <p>${storedTodos[0].description}</p>
         <div class="todo-buttons">
         <button id="done-button"><i class="fas fa-check"></i></button>
         <button id="delete-button"><i class="fas fa-times"></i></button>
@@ -50,16 +56,3 @@ const getTodos = () => {
         `
     }
 }
-/* TODO: Integrate this
-const saveLocalTodos = (todo) => {
-    let todos;
-    if (localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
-}*/
-
-//window.onload = getTodos()

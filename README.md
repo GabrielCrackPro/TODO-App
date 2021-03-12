@@ -2,6 +2,11 @@
 
 A web TODO App
 
+## Done
+
+- [x] Convert App to OOP
+- [x] Show TODOs on screen
+
 ## Fix
 
 - Fix Animations
@@ -11,4 +16,3 @@ A web TODO App
 
 - Add functions to todo buttons
 - Add animations on create/delete todo
-- Integrate saveTodos function
